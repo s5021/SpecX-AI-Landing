@@ -1,0 +1,20 @@
+# Images Directory
+
+This directory is reserved for image assets for the SpecX AI Landing Page.
+
+## Recommended Images
+
+- Product screenshots
+- Team photos
+- Company logo (SVG preferred)
+- Hero background images
+- Feature illustrations
+- Architecture diagrams
+
+## Image Optimization Tips
+
+- Use WebP format for better compression
+- Optimize images before uploading (TinyPNG, ImageOptim)
+- Use responsive images with srcset attribute
+- Keep file sizes under 200KB when possible
+- Use SVG for logos and icons

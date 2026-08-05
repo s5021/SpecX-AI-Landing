@@ -1,0 +1,22 @@
+# Icons Directory
+
+This directory is reserved for icon assets for the SpecX AI Landing Page.
+
+## Recommended Icon Format
+
+- SVG (Scalable Vector Graphics) - preferred
+- PNG with transparent background
+- Icon sizes: 16x16, 32x32, 64x64, 128x128
+
+## Icon Libraries (for future reference)
+
+- Font Awesome
+- Material Icons
+- Heroicons
+- Feather Icons
+- Bootstrap Icons
+
+## Current Implementation
+
+The landing page currently uses emoji/text-based icons to avoid external dependencies.
+Replace with proper icons when transitioning to production.

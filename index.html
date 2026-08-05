@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SpecX AI Agent - Enterprise-grade multi-agent platform powered by Azure OpenAI, RAG, and Azure AI Search">
+    <meta name="keywords" content="AI, Azure OpenAI, Multi-Agent, RAG, Enterprise AI, Azure AI Search">
+    <meta name="author" content="SpecX AI Team">
+    <title>SpecX AI Agent - Enterprise AI Solutions Platform</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- ====================================== -->
+    <!-- NAVIGATION BAR - Sticky Header -->
+    <!-- ====================================== -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">SpecX AI</span>
+            </div>
+            
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#features" class="nav-link">Features</a></li>
+                <li><a href="#architecture" class="nav-link">Architecture</a></li>
+                <li><a href="#technologies" class="nav-link">Technologies</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            
+            <a href="#get-started" class="btn btn-primary">Get Started</a>
+        </nav>
+    </header>
+
+    <!-- ====================================== -->
+    <!-- HERO SECTION -->
+    <!-- ====================================== -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        Build Intelligent<br>
+                        <span class="gradient-text">Enterprise AI Solutions</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        SpecX AI Agent is an enterprise-grade multi-agent platform powered by 
+                        Azure OpenAI, RAG, Azure AI Search and modern cloud architecture.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#get-started" class="btn btn-primary btn-large">Get Started</a>
+                        <a href="#documentation" class="btn btn-secondary btn-large">View Documentation</a>
+                    </div>
+                </div>
+                
+                <div class="hero-visual">
+                    <!-- Pure CSS AI Illustration -->
+                    <div class="ai-illustration">
+                        <div class="ai-brain">
+                            <div class="brain-node node-1"></div>
+                            <div class="brain-node node-2"></div>
+                            <div class="brain-node node-3"></div>
+                            <div class="brain-node node-4"></div>
+                            <div class="brain-connection connection-1"></div>
+                            <div class="brain-connection connection-2"></div>
+                            <div class="brain-connection connection-3"></div>
+                        </div>
+                        <div class="ai-orbit orbit-1"></div>
+                        <div class="ai-orbit orbit-2"></div>
+                        <div class="ai-orbit orbit-3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====================================== -->
+    <!-- ABOUT SPECX - CAPABILITIES -->
+    <!-- ====================================== -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <header class="section-header">
+                <h2 class="section-title">What SpecX AI Agent Can Do</h2>
+                <p class="section-description">
+                    Powered by advanced AI capabilities to transform your software development lifecycle
+                </p>
+            </header>
+            
+            <div class="capabilities-grid">
+                <article class="capability-card glass-card">
+                    <div class="card-icon">📋</div>
+                    <h3 class="card-title">Requirement Analysis</h3>
+                    <p class="card-description">
+                        Automatically analyze business requirements and generate comprehensive specifications
+                    </p>
+                </article>
+                
+                <article class="capability-card glass-card">
+                    <div class="card-icon">📐</div>
+                    <h3 class="card-title">SDD Generation</h3>
+                    <p class="card-description">
+                        Create detailed Software Design Documents with architecture diagrams and patterns
+                    </p>
+                </article>
+                
+                <article class="capability-card glass-card">
+                    <div class="card-icon">🚀</div>
+                    <h3 class="card-title">Deployment Guide Generation</h3>
+                    <p class="card-description">
+                        Generate step-by-step deployment guides for Azure cloud infrastructure
+                    </p>
+                </article>
+                
+                <article class="capability-card glass-card">
+                    <div class="card-icon">🧪</div>
+                    <h3 class="card-title">Testing Documentation</h3>
+                    <p class="card-description">
+                        Produce comprehensive test plans, test cases, and quality assurance documentation
+                    </p>
+                </article>
+                
+                <article class="capability-card glass-card">
+                    <div class="card-icon">💰</div>
+                    <h3 class="card-title">Azure BOQ Estimation</h3>
+                    <p class="card-description">
+                        Calculate accurate Bill of Quantities for Azure resources and infrastructure costs
+                    </p>
+                </article>
+                
+                <article class="capability-card glass-card">
+                    <div class="card-icon">🔍</div>
+                    <h3 class="card-title">AI Powered Knowledge Retrieval</h3>
+                    <p class="card-description">
+                        Leverage RAG technology to retrieve relevant information from vast knowledge bases
+                    </p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====================================== -->
+    <!-- AI AGENT ARCHITECTURE -->
+    <!-- ====================================== -->
+    <section id="architecture" class="architecture-section">
+        <div class="container">
+            <header class="section-header">
+                <h2 class="section-title">Multi-Agent Architecture</h2>
+                <p class="section-description">
+                    Hierarchical agent system designed for specialized task execution
+                </p>
+            </header>
+            
+            <div class="architecture-flow">
+                <article class="architecture-card glass-card">
+                    <div class="agent-badge parent-agent">Parent</div>
+                    <h3 class="agent-title">Parent AI Agent</h3>
+                    <p class="agent-description">Orchestrates all specialized agents and manages workflow</p>
+                </article>
+                
+                <div class="flow-arrow">↓</div>
+                
+                <article class="architecture-card glass-card">
+                    <div class="agent-badge">Specialist</div>
+                    <h3 class="agent-title">Requirements Agent</h3>
+                    <p class="agent-description">Analyzes and documents business requirements</p>
+                </article>
+                
+                <div class="flow-arrow">↓</div>
+                
+                <article class="architecture-card glass-card">
+                    <div class="agent-badge">Specialist</div>
+                    <h3 class="agent-title">SDD Agent</h3>
+                    <p class="agent-description">Generates Software Design Documents</p>
+                </article>
+                
+                <div class="flow-arrow">↓</div>
+                
+                <article class="architecture-card glass-card">
+                    <div class="agent-badge">Specialist</div>
+                    <h3 class="agent-title">Deployment Agent</h3>
+                    <p class="agent-description">Creates deployment guides and strategies</p>
+                </article>
+                
+                <div class="flow-arrow">↓</div>
+                
+                <article class="architecture-card glass-card">
+                    <div class="agent-badge">Specialist</div>
+                    <h3 class="agent-title">Testing Agent</h3>
+                    <p class="agent-description">Produces testing documentation and plans</p>
+                </article>
+                
+                <div class="flow-arrow">↓</div>
+                
+                <article class="architecture-card glass-card">
+                    <div class="agent-badge">Specialist</div>
+                    <h3 class="agent-title">BOQ Agent</h3>
+                    <p class="agent-description">Estimates Azure infrastructure costs</p>
+                </article>
+                
+                <div class="flow-arrow">↓</div>
+                
+                <article class="architecture-card glass-card">
+                    <div class="agent-badge">Specialist</div>
+                    <h3 class="agent-title">Knowledge Agent</h3>
+                    <p class="agent-description">Retrieves information using RAG technology</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====================================== -->
+    <!-- FEATURES SECTION -->
+    <!-- ====================================== -->
+    <section id="features" class="features-section">
+        <div class="container">
+            <header class="section-header">
+                <h2 class="section-title">Powerful Features</h2>
+                <p class="section-description">
+                    Built with cutting-edge technologies for maximum performance and scalability
+                </p>
+            </header>
+            
+            <div class="features-grid">
+                <article class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3 class="feature-title">Azure OpenAI</h3>
+                    <p class="feature-description">
+                        Leverage GPT-4 and advanced language models for intelligent document generation
+                    </p>
+                </article>
+                
+                <article class="feature-card">
+                    <div class="feature-icon">🔎</div>
+                    <h3 class="feature-title">Azure AI Search</h3>
+                    <p class="feature-description">
+                        Enterprise-grade search capabilities with vector and semantic search support
+                    </p>
+                </article>
+                
+                <article class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3 class="feature-title">Multi-Agent System</h3>
+                    <p class="feature-description">
+                        Specialized agents working together to solve complex enterprise problems
+                    </p>
+                </article>
+                
+                <article class="feature-card">
+                    <div class="feature-icon">✨</div>
+                    <h3 class="feature-title">Prompt Engineering</h3>
+                    <p class="feature-description">
+                        Optimized prompts ensure consistent, high-quality AI-generated outputs
+                    </p>
+                </article>
+                
+                <article class="feature-card">
+                    <div class="feature-icon">📚</div>
+                    <h3 class="feature-title">RAG Technology</h3>
+                    <p class="feature-description">
+                        Retrieval-Augmented Generation for accurate, context-aware responses
+                    </p>
+                </article>
+                
+                <article class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3 class="feature-title">FastAPI Backend</h3>
+                    <p class="feature-description">
+                        High-performance Python API with automatic documentation and validation
+                    </p>
+                </article>
+                
+                <article class="feature-card">
+                    <div class="feature-icon">⚛️</div>
+                    <h3 class="feature-title">React Frontend</h3>
+                    <p class="feature-description">
+                        Modern, responsive user interface with component-based architecture
+                    </p>
+                </article>
+                
+                <article class="feature-card">
+                    <div class="feature-icon">📘</div>
+                    <h3 class="feature-title">TypeScript</h3>
+                    <p class="feature-description">
+                        Type-safe development for maintainable and scalable frontend code
+                    </p>
+                </article>
+                
+                <article class="feature-card">
+                    <div class="feature-icon">🐳</div>
+                    <h3 class="feature-title">Docker</h3>
+                    <p class="feature-description">
+                        Containerized deployment for consistent environments across platforms
+                    </p>
+                </article>
+                
+                <article class="feature-card">
+                    <div class="feature-icon">☁️</div>
+                    <h3 class="feature-title">Azure Cloud</h3>
+                    <p class="feature-description">
+                        Enterprise-grade cloud infrastructure with security and compliance
+                    </p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====================================== -->
+    <!-- WORKFLOW TIMELINE -->
+    <!-- ====================================== -->
+    <section id="workflow" class="workflow-section">
+        <div class="container">
+            <header class="section-header">
+                <h2 class="section-title">How It Works</h2>
+                <p class="section-description">
+                    Seamless workflow from user query to generated documentation
+                </p>
+            </header>
+            
+            <div class="workflow-timeline">
+                <article class="timeline-item">
+                    <div class="timeline-badge">1</div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">User Query</h3>
+                        <p class="timeline-description">User submits a request through the interface</p>
+                    </div>
+                </article>
+                
+                <div class="timeline-connector">↓</div>
+                
+                <article class="timeline-item">
+                    <div class="timeline-badge">2</div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Intent Detection</h3>
+                        <p class="timeline-description">AI analyzes the query to determine user intent</p>
+                    </div>
+                </article>
+                
+                <div class="timeline-connector">↓</div>
+                
+                <article class="timeline-item">
+                    <div class="timeline-badge">3</div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Parent Agent</h3>
+                        <p class="timeline-description">Routes request to appropriate specialized agent</p>
+                    </div>
+                </article>
+                
+                <div class="timeline-connector">↓</div>
+                
+                <article class="timeline-item">
+                    <div class="timeline-badge">4</div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Specialized Agent</h3>
+                        <p class="timeline-description">Expert agent processes the specific task</p>
+                    </div>
+                </article>
+                
+                <div class="timeline-connector">↓</div>
+                
+                <article class="timeline-item">
+                    <div class="timeline-badge">5</div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Azure OpenAI</h3>
+                        <p class="timeline-description">Generates content using advanced language models</p>
+                    </div>
+                </article>
+                
+                <div class="timeline-connector">↓</div>
+                
+                <article class="timeline-item">
+                    <div class="timeline-badge">6</div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Generated Document</h3>
+                        <p class="timeline-description">Delivers professional documentation to the user</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====================================== -->
+    <!-- TECHNOLOGIES SECTION -->
+    <!-- ====================================== -->
+    <section id="technologies" class="technologies-section">
+        <div class="container">
+            <header class="section-header">
+                <h2 class="section-title">Technology Stack</h2>
+                <p class="section-description">
+                    Built with modern, enterprise-grade technologies
+                </p>
+            </header>
+            
+            <div class="tech-badges">
+                <span class="tech-badge">HTML5</span>
+                <span class="tech-badge">CSS3</span>
+                <span class="tech-badge">Python</span>
+                <span class="tech-badge">FastAPI</span>
+                <span class="tech-badge">Azure OpenAI</span>
+                <span class="tech-badge">Azure AI Search</span>
+                <span class="tech-badge">Docker</span>
+                <span class="tech-badge">Git</span>
+                <span class="tech-badge">GitHub</span>
+                <span class="tech-badge">React</span>
+                <span class="tech-badge">Node.js</span>
+                <span class="tech-badge">TypeScript</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====================================== -->
+    <!-- STATISTICS SECTION -->
+    <!-- ====================================== -->
+    <section class="statistics-section">
+        <div class="container">
+            <div class="stats-grid">
+                <article class="stat-card">
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label">Specialized Agents</div>
+                </article>
+                
+                <article class="stat-card">
+                    <div class="stat-number">95%</div>
+                    <div class="stat-label">Automation</div>
+                </article>
+                
+                <article class="stat-card">
+                    <div class="stat-number">30 sec</div>
+                    <div class="stat-label">Average Generation Time</div>
+                </article>
+                
+                <article class="stat-card">
+                    <div class="stat-number">99%</div>
+                    <div class="stat-label">Accuracy</div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====================================== -->
+    <!-- TESTIMONIALS SECTION -->
+    <!-- ====================================== -->
+    <section class="testimonials-section">
+        <div class="container">
+            <header class="section-header">
+                <h2 class="section-title">What Our Users Say</h2>
+                <p class="section-description">
+                    Trusted by development teams worldwide
+                </p>
+            </header>
+            
+            <div class="testimonials-grid">
+                <article class="testimonial-card glass-card">
+                    <div class="testimonial-quote">"</div>
+                    <p class="testimonial-text">
+                        SpecX AI Agent transformed our documentation process. What used to take days 
+                        now takes minutes. The quality is exceptional and consistent.
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SR</div>
+                        <div class="author-info">
+                            <div class="author-name">Sarah Richardson</div>
+                            <div class="author-role">Lead Solutions Architect, TechCorp</div>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="testimonial-card glass-card">
+                    <div class="testimonial-quote">"</div>
+                    <p class="testimonial-text">
+                        The multi-agent architecture is brilliant. Each specialized agent delivers 
+                        exactly what we need. Our team productivity increased by 300%.
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MJ</div>
+                        <div class="author-info">
+                            <div class="author-name">Michael Johnson</div>
+                            <div class="author-role">Engineering Manager, CloudScale Inc</div>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="testimonial-card glass-card">
+                    <div class="testimonial-quote">"</div>
+                    <p class="testimonial-text">
+                        Best investment we made this year. The Azure integration is seamless, 
+                        and the BOQ estimation feature saves us countless hours.
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">EP</div>
+                        <div class="author-info">
+                            <div class="author-name">Emily Parker</div>
+                            <div class="author-role">CTO, StartupFlow</div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====================================== -->
+    <!-- CALL TO ACTION -->
+    <!-- ====================================== -->
+    <section id="get-started" class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Ready to Build Enterprise AI Solutions?</h2>
+                <p class="cta-description">
+                    Join thousands of developers already using SpecX AI Agent to automate their documentation workflow
+                </p>
+                <div class="cta-buttons">
+                    <a href="#start" class="btn btn-primary btn-large">Start Free</a>
+                    <a href="#contact" class="btn btn-secondary btn-large">Contact Team</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====================================== -->
+    <!-- FOOTER -->
+    <!-- ====================================== -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3 class="footer-title">SpecX AI Agent</h3>
+                    <p class="footer-description">
+                        Enterprise-grade multi-agent platform for intelligent document generation 
+                        and automation.
+                    </p>
+                </div>
+                
+                <div class="footer-column">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#architecture">Architecture</a></li>
+                        <li><a href="#technologies">Technologies</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4 class="footer-heading">Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="#documentation">Documentation</a></li>
+                        <li><a href="#api">API Reference</a></li>
+                        <li><a href="#guides">Guides</a></li>
+                        <li><a href="#support">Support</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4 class="footer-heading">Connect</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://github.com">GitHub</a></li>
+                        <li><a href="https://linkedin.com">LinkedIn</a></li>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 SpecX AI Agent. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

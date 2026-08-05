@@ -1,0 +1,75 @@
+# SpecX AI Landing Page - .gitignore
+
+# ===================================
+# Temporary Day 2 Files (Add later)
+# ===================================
+day2-styles-TO-ADD-LATER.css
+
+# ===================================
+# Editor and IDE
+# ===================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# ===================================
+# Node.js (for Day 3 React)
+# ===================================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# ===================================
+# Build outputs
+# ===================================
+build/
+dist/
+out/
+*.log
+
+# ===================================
+# Environment variables
+# ===================================
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# ===================================
+# OS generated files
+# ===================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# ===================================
+# Temporary files
+# ===================================
+*.tmp
+*.temp
+*.cache
+.cache/
+
+# ===================================
+# Testing
+# ===================================
+coverage/
+.nyc_output/
+
+# ===================================
+# Misc
+# ===================================
+*.orig
+.sass-cache/
