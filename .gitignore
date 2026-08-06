@@ -73,3 +73,8 @@ coverage/
 # ===================================
 *.orig
 .sass-cache/
+
+# Day 3 React Dashboard
+day3-react-dashboard/node_modules/
+day3-react-dashboard/build/
+day3-react-dashboard/.env
