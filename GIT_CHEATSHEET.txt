@@ -1,0 +1,278 @@
+╔══════════════════════════════════════════════════════════╗
+║                                                          ║
+║              🚀 GIT QUICK REFERENCE CARD 🚀              ║
+║                                                          ║
+║          Keep This Handy While Working!                  ║
+║                                                          ║
+╚══════════════════════════════════════════════════════════╝
+
+═══════════════════════════════════════════════════════════
+📅 DAILY WORKFLOW (What You'll Use 90% of the Time)
+═══════════════════════════════════════════════════════════
+
+┌─────────────────────────────────────────────────────────┐
+│ 1. START YOUR DAY (Pull latest changes)                │
+└─────────────────────────────────────────────────────────┘
+
+git checkout main
+git pull origin main
+
+
+┌─────────────────────────────────────────────────────────┐
+│ 2. CREATE NEW FEATURE BRANCH                            │
+└─────────────────────────────────────────────────────────┘
+
+git checkout -b feature/day2-javascript
+                ↑         ↑
+                │         └─ descriptive name
+                └─ creates and switches to new branch
+
+
+┌─────────────────────────────────────────────────────────┐
+│ 3. CHECK WHAT YOU CHANGED                               │
+└─────────────────────────────────────────────────────────┘
+
+git status
+
+
+┌─────────────────────────────────────────────────────────┐
+│ 4. STAGE YOUR CHANGES                                   │
+└─────────────────────────────────────────────────────────┘
+
+git add .                    # Add all files
+git add script.js            # Add specific file
+git add *.js                 # Add all JavaScript files
+
+
+┌─────────────────────────────────────────────────────────┐
+│ 5. COMMIT YOUR CHANGES                                  │
+└─────────────────────────────────────────────────────────┘
+
+git commit -m "Day 2: Add JavaScript interactivity"
+
+
+┌─────────────────────────────────────────────────────────┐
+│ 6. PUSH TO GITHUB                                       │
+└─────────────────────────────────────────────────────────┘
+
+git push -u origin feature/day2-javascript
+         ↑
+         └─ first time pushing this branch
+
+git push                     # After first time
+
+
+┌─────────────────────────────────────────────────────────┐
+│ 7. AFTER PR IS MERGED                                   │
+└─────────────────────────────────────────────────────────┘
+
+git checkout main
+git pull origin main
+git branch -d feature/day2-javascript
+
+
+═══════════════════════════════════════════════════════════
+🔍 INFORMATION COMMANDS (Check Status)
+═══════════════════════════════════════════════════════════
+
+git status                   # What's changed?
+git log --oneline -5         # Last 5 commits
+git branch                   # List branches
+git diff                     # See changes not staged
+git diff --staged            # See staged changes
+git remote -v                # Show remote repositories
+
+
+═══════════════════════════════════════════════════════════
+🌿 BRANCH COMMANDS
+═══════════════════════════════════════════════════════════
+
+git branch                        # List all branches
+git branch feature/name           # Create branch
+git checkout feature/name         # Switch to branch
+git checkout -b feature/name      # Create + switch
+git branch -d feature/name        # Delete branch (safe)
+git branch -D feature/name        # Force delete
+
+
+═══════════════════════════════════════════════════════════
+↩️  UNDO COMMANDS (Careful!)
+═══════════════════════════════════════════════════════════
+
+git checkout -- file.js           # Discard changes to file
+git restore file.js               # Newer way (Git 2.23+)
+git reset HEAD file.js            # Unstage file
+git reset --soft HEAD~1           # Undo commit, keep changes
+git reset --hard HEAD~1           # Undo commit, lose changes ⚠️
+
+
+═══════════════════════════════════════════════════════════
+📝 COMMIT MESSAGE TIPS
+═══════════════════════════════════════════════════════════
+
+✅ GOOD COMMITS:
+────────────────
+git commit -m "Add smooth scroll navigation"
+git commit -m "Fix: Mobile menu not closing on link click"
+git commit -m "Day 2: Complete JavaScript interactivity"
+
+
+❌ BAD COMMITS:
+────────────────
+git commit -m "changes"
+git commit -m "update"
+git commit -m "fixed stuff"
+git commit -m "asdfgh"
+
+
+═══════════════════════════════════════════════════════════
+🚨 COMMON SITUATIONS & SOLUTIONS
+═══════════════════════════════════════════════════════════
+
+┌─────────────────────────────────────────────────────────┐
+│ SITUATION: I made changes on the wrong branch!          │
+└─────────────────────────────────────────────────────────┘
+
+# Save your changes
+git stash
+
+# Switch to correct branch
+git checkout -b correct-branch
+
+# Apply your changes
+git stash pop
+
+
+┌─────────────────────────────────────────────────────────┐
+│ SITUATION: I want to discard all my changes             │
+└─────────────────────────────────────────────────────────┘
+
+git checkout -- .                 # Discard all changes
+git clean -fd                     # Remove untracked files
+
+
+┌─────────────────────────────────────────────────────────┐
+│ SITUATION: I committed to main by mistake!              │
+└─────────────────────────────────────────────────────────┘
+
+# Create branch with current state
+git branch feature/fix
+
+# Reset main to previous state
+git reset --hard HEAD~1
+
+# Switch to your branch
+git checkout feature/fix
+
+
+┌─────────────────────────────────────────────────────────┐
+│ SITUATION: My branch is behind main                     │
+└─────────────────────────────────────────────────────────┘
+
+git checkout main
+git pull origin main
+git checkout feature/my-branch
+git merge main
+
+
+┌─────────────────────────────────────────────────────────┐
+│ SITUATION: I need to change my last commit message      │
+└─────────────────────────────────────────────────────────┘
+
+git commit --amend -m "New message"
+
+
+═══════════════════════════════════════════════════════════
+🎯 YOUR 3-DAY PROJECT WORKFLOW
+═══════════════════════════════════════════════════════════
+
+DAY 1 - HTML/CSS:
+─────────────────
+git checkout -b feature/day1-html-css
+# ... work on Day 1 ...
+git add .
+git commit -m "Day 1: HTML5 & CSS3 landing page"
+git push -u origin feature/day1-html-css
+# Create PR on GitHub → Merge
+
+
+DAY 2 - JavaScript:
+───────────────────
+git checkout main
+git pull origin main
+git checkout -b feature/day2-javascript
+# ... work on Day 2 ...
+git add .
+git commit -m "Day 2: JavaScript interactivity"
+git push -u origin feature/day2-javascript
+# Create PR on GitHub → Merge
+
+
+DAY 3 - React:
+──────────────
+git checkout main
+git pull origin main
+git checkout -b feature/day3-react
+# ... work on Day 3 ...
+git add .
+git commit -m "Day 3: React conversion"
+git push -u origin feature/day3-react
+# Create PR on GitHub → Merge
+
+
+═══════════════════════════════════════════════════════════
+🎓 GITHUB PULL REQUEST CHECKLIST
+═══════════════════════════════════════════════════════════
+
+Before Creating PR:
+□ Code is working (tested locally)
+□ No console errors
+□ Code is commented
+□ Commit messages are clear
+□ Branch is up to date with main
+
+PR Description Should Include:
+□ What was built
+□ Why it was built
+□ How to test it
+□ Screenshots (if UI changes)
+□ Checklist of completed items
+
+
+═══════════════════════════════════════════════════════════
+💡 PRO TIPS
+═══════════════════════════════════════════════════════════
+
+1. Commit often! (Multiple times per day)
+2. Push at least once per day
+3. Always work on a branch, never on main
+4. Pull main before creating new branch
+5. Delete merged branches to stay organized
+6. Use descriptive branch and commit names
+7. Test before committing
+8. Keep commits focused (one feature per commit)
+
+
+═══════════════════════════════════════════════════════════
+🆘 HELP COMMANDS
+═══════════════════════════════════════════════════════════
+
+git help                     # General help
+git help commit              # Help for specific command
+git --version                # Check Git version
+
+
+═══════════════════════════════════════════════════════════
+📚 REMEMBER
+═══════════════════════════════════════════════════════════
+
+Before making changes:       git checkout -b feature/name
+After making changes:        git add . → git commit → git push
+After merging PR:            git checkout main → git pull
+
+
+═══════════════════════════════════════════════════════════
+
+           🎉 Happy Coding with Git! 🎉
+
+═══════════════════════════════════════════════════════════
