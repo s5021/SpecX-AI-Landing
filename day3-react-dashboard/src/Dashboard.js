@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Card from './components/Card';
 import List from './components/List';
@@ -7,9 +7,14 @@ import './Dashboard.css';
 
 /**
  * Main Dashboard Component
+ * Day 7: Integrated with TypeScript API (GET /items endpoint)
+ * 
  * Demonstrates:
  * - Component composition
- * - State management with useState
+ * - State management with useState & useEffect
+ * - Async data fetching from API
+ * - Loading, error, and empty states
+ * - TypeScript API response handling
  * - Event handling
  * - Props passing
  * - Conditional rendering
@@ -18,27 +23,75 @@ const Dashboard = () => {
     // State: User name
     const [userName] = useState('John Doe');
     
-    // State: List items
-    const [items, setItems] = useState([
-        {
-            id: 1,
-            name: 'Project Alpha',
-            description: 'Initial setup complete',
-            date: '2026-08-05'
-        },
-        {
-            id: 2,
-            name: 'Project Beta',
-            description: 'In progress - Backend API development',
-            date: '2026-08-04'
-        },
-        {
-            id: 3,
-            name: 'Project Gamma',
-            description: 'Planning phase - Requirements gathering',
-            date: '2026-08-03'
-        }
-    ]);
+    // State: List items (now fetched from API)
+    const [items, setItems] = useState([]);
+    
+    // State: Loading state
+    const [loading, setLoading] = useState(true);
+    
+    // State: Error state
+    const [error, setError] = useState(null);
+    
+    /**
+     * useEffect: Fetch items from API on component mount
+     * Day 7: Connects React UI to TypeScript API
+     * 
+     * Flow:
+     * 1. Component mounts
+     * 2. Set loading = true
+     * 3. Fetch GET /items from API at http://localhost:3001
+     * 4. Receive typed response: ApiResponse<ItemsResponse>
+     * 5. Transform API data to match List component structure
+     * 6. Set items in React state
+     * 7. Set loading = false
+     * 8. On error: set error state and loading = false
+     */
+    useEffect(() => {
+        const fetchItems = async () => {
+            try {
+                setLoading(true);
+                setError(null);
+                
+                // Call TypeScript API endpoint
+                const response = await fetch('http://localhost:3001/items');
+                
+                if (!response.ok) {
+                    throw new Error(`API Error: ${response.status} ${response.statusText}`);
+                }
+                
+                // Parse JSON response (ApiResponse<ItemsResponse>)
+                const data = await response.json();
+                
+                if (!data.success) {
+                    throw new Error(data.error || 'API returned unsuccessful response');
+                }
+                
+                // Transform API items to match List component structure
+                // API: { id, name, description, category, price, inStock, createdAt }
+                // List: { id, name, description, date }
+                const transformedItems = data.data.items.map(item => ({
+                    id: item.id,
+                    name: item.name,
+                    description: item.description,
+                    date: new Date(item.createdAt).toISOString().split('T')[0], // Convert createdAt to date
+                    category: item.category,
+                    price: item.price,
+                    inStock: item.inStock
+                }));
+                
+                setItems(transformedItems);
+                setLoading(false);
+            } catch (err) {
+                console.error('Failed to fetch items:', err);
+                setError(err.message || 'Failed to fetch items from API');
+                setLoading(false);
+            }
+        };
+        
+        // Fetch items when component mounts
+        fetchItems();
+    }, []); // Empty dependency array = run once on mount
+    
     
     // Event Handler: Logout
     const handleLogout = () => {
@@ -116,13 +169,51 @@ const Dashboard = () => {
                 
                 {/* Two Column Layout */}
                 <div className="dashboard-grid">
-                    {/* List Component - Demonstrating Arrays & Conditional Rendering */}
+                    {/* List Component - Now fetches from API */}
                     <div className="grid-item">
-                        <List
-                            items={items}
-                            onItemClick={handleItemClick}
-                            onItemDelete={handleItemDelete}
-                        />
+                        {loading && (
+                            <div className="dashboard-list">
+                                <div className="list-header">
+                                    <h2>Recent Activities</h2>
+                                </div>
+                                <p style={{ textAlign: 'center', padding: '20px' }}>
+                                    ⏳ Loading items from API...
+                                </p>
+                            </div>
+                        )}
+                        
+                        {error && (
+                            <div className="dashboard-list">
+                                <div className="list-header">
+                                    <h2>Recent Activities</h2>
+                                </div>
+                                <p style={{ textAlign: 'center', padding: '20px', color: '#ef4444' }}>
+                                    ❌ Error: {error}
+                                </p>
+                                <p style={{ textAlign: 'center', padding: '10px', fontSize: '0.9em', color: '#666' }}>
+                                    Make sure the API is running on http://localhost:3001
+                                </p>
+                            </div>
+                        )}
+                        
+                        {!loading && !error && items.length === 0 && (
+                            <div className="dashboard-list">
+                                <div className="list-header">
+                                    <h2>Recent Activities</h2>
+                                </div>
+                                <p style={{ textAlign: 'center', padding: '20px' }}>
+                                    📭 No items found in API
+                                </p>
+                            </div>
+                        )}
+                        
+                        {!loading && !error && items.length > 0 && (
+                            <List
+                                items={items}
+                                onItemClick={handleItemClick}
+                                onItemDelete={handleItemDelete}
+                            />
+                        )}
                     </div>
                     
                     {/* Form Component - Demonstrating State & Events */}
